@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ScriptAkademy</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ScriptAkademy.styles.css" asp-append-version="true" />
+</head>
+<style>
+
+</style>
+<body>
+    <header>
+        <nav class="barra navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3" style="background:linear-gradient(25deg, #FF1F1F, #FF457B); box-shadow:  6px 6px 14px #cfcfcf;">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Script Akademy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Inicio</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="margin-left:5px;">
+
+        <div class="row" style="width:116%;">
+
+            <div class="" style="width:20.6%;">
+
+                <div class="card text-light bg-dark" style="width: 18rem; margin-bottom: 15px;">
+                  <img src="https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/code-t.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Dynamics System</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
+                        <a type="button" asp-controller="Usuarios" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-people-fill"></i> Administrar Usuarios</a>
+                    </li>
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
+                        <button type="button" asp-controller="Productos" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-basket3-fill"></i> Administrar Productos</button>
+                    </li>
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
+                        <button type="button" asp-controller="Clientes" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-person-square"></i> Administrar Clientes</button>
+                    </li>
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
+                        <button type="button" asp-controller="Ventas" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-cart-fill"></i> Administrar Ventas</button>
+                    </li>
+                  </ul>
+                  <div class="card-body" style="height:8.5vh;">
+                  </div>
+                  <li class="list-group-item text-secondary d-grid gap-2" style="background-color: #3D3D3D;">
+                      <br/>
+                  </li>
+                </div>
+
+            </div>
+
+            <div class="col" style="width:100%;">
+
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted bg-danger opacity-50" style="height: 5pc; margin-bottom: -60px;">
+        <div class="container text-light" style="margin-top:10px;">
+            &copy; 2022 - ScriptAkademy - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

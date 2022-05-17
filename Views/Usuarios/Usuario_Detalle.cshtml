@@ -1,0 +1,142 @@
+﻿@model ScriptAkademy.Models.ViewModels.UsuarioE 
+@{
+    ViewData["Title"] = "Usuario_Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    
+      <div class="card">
+              
+        @if (Model.oUsuario.IdUsuario == 0)
+        {
+            <div class="card-header">
+                Crear Usuario
+             </div>
+        }
+        else
+        {
+            <div class="card-header">
+                 Editar Usuario
+             </div>
+        }
+
+              <div class="card-body">
+    
+                  <form asp-action="Usuario_Detalle" asp-controller="Usuarios" method="post">
+
+                      <input type="hidden" class="form-control" asp-for="oUsuario.IdUsuario" id="Id" aria-describedby="IDs">    
+
+                      <div class="row">
+                        <div class="col">
+                      
+                              <div class="mb-3">
+                                <label for="" class="form-label">Nombre</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-plus-circle-fill"></i></span>
+                                    <input type="text" placeholder="ingresar..." class="form-control" asp-for="oUsuario.Nombre" id="nombre" aria-describedby="nombres">
+                                </div>
+                                <div id="nombres" class="form-text">Agrege el nombre del usuario a guardar</div>
+                                <span asp-validation-for="oUsuario.Nombre" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Contraseña</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-hash"></i></span>
+                                    <input type="password" placeholder="ingresar..." class="form-control" asp-for="oUsuario.Contrasena" id="contrasena">
+                                </div>
+                                <div id="contraseñas" class="form-text">Agrege la contraseña para el loggin</div>
+                                <span asp-validation-for="oUsuario.Contrasena" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">DUI</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-file-person"></i></span>
+                                    <input type="text" placeholder="ingresar..." class="form-control" asp-for="oUsuario.Dui" id="dui" aria-describedby="duis">
+                                </div>
+                                <div id="duis" class="form-text">Agrege el dui para el reconocimiento legal</div>
+                                <span asp-validation-for="oUsuario.Dui" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Celular</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-phone-fill"></i></span>
+                                    <input type="text" placeholder="ingresar..." class="form-control" asp-for="oUsuario.Celular" id="celular" aria-describedby="celulares">
+                                </div>
+                                <div id="celulares" class="form-text">Agrege un celular para futuros contactos / llamadas</div>
+                                <span asp-validation-for="oUsuario.Celular" class="text-danger"></span>
+                              </div>
+
+                        </div>
+                        <div class="col">
+                      
+                              <div class="mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-envelope-fill"></i></span>
+                                    <input type="email" placeholder="ingresar..." class="form-control" asp-for="oUsuario.Correo" id="email" aria-describedby="correos">
+                                </div>
+                                <div id="correos" class="form-text">Ingrese un correo para notificaciones de la empresa</div>
+                                <span asp-validation-for="oUsuario.Correo" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Estado de usuario</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-person-video"></i></span>
+                                    <select class="form-select" asp-for="oUsuario.IdestadoUsuario" asp-items="@Model.listaEstado">
+                                      <option value="selected disable">Seleccionar Estado...</option>
+                                    </select>
+                                </div>
+                                <div id="estados de usuarios" class="form-text">Agrege el estado en el que el usuario se encuentra</div>
+                                <span asp-validation-for="oUsuario.IdestadoUsuario" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Tipo de usuario</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-person-video2"></i></span>
+                                    <select class="form-select" asp-for="oUsuario.IdtipoUsuario" asp-items="@Model.listaTipo">
+                                      <option value="selected disable">Seleccionar Tipo...</option>
+                                    </select>
+                                </div>
+                                <div id="tipos de usuarios" class="form-text">Ingrese el nivel del usuario en el sistema</div>
+                                <span asp-validation-for="oUsuario.IdtipoUsuario" class="text-danger"></span>
+                              </div>
+
+                        </div>
+                        <div class="col">
+
+                            <div class="card bg-warning text-dark bg-opacity-25">
+                              <img src="https://cdn.create.vista.com/api/media/small/144913629/stock-vector-user-sign-illustration-vector-set" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <h5 class="card-title">Administrar Usuarios</h5>
+                                <p class="card-text">Apartado para administrar los usuarios del sistema, de parte de la empresa Script Akademy</p>
+                              </div>
+                            </div>
+
+                        </div>
+                      </div>     
+                  
+                      @if (Model.oUsuario.IdUsuario == 0)
+                      {
+
+                          <button type="submit" class="btn btn-success">Agregar</button>
+
+                      }
+                      else
+                      {
+                        
+                          <button type="submit" class="btn btn-warning">Editar</button>
+
+                      }
+
+                      <button asp-action="Index" asp-controller="Usuarios" class="btn btn-danger">Volver a la lista</button>
+
+                 </form>
+
+              </div>
+            </div>
+
