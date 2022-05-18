@@ -12,69 +12,198 @@
 </head>
 <style>
 
+    #link {
+
+        color: white;
+        background-color: #3B3B3B !important;
+        border-radius: 20px; 
+        border: 0px; 
+        box-shadow:  -5px -5px 9px #181818,5px 5px 9px #181818; 
+
+    }
+    #link:hover{
+        background-color: #FF4D4D !important;
+        color: black;
+    }
+
+    #linkLogin{
+        
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 20px;
+
+    }
+
+    #linkLogin:hover{
+        border: 1px solid black;
+        background-color: #44BEFF !important;
+        color: black;
+    }
+
+    #search{
+        border: 2px solid white;
+        border-radius: 20px;
+        background-color: #FFBFCA;
+        color: white;
+    }
+
+    #titles{
+        background-color: #790014;
+        border: 3px solid white;
+        border-radius: 20px;
+        border-style: dashed;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    #carta{
+        
+        border-radius: 0px;
+
+    }
+
+    #textbox{
+
+        z-index: 1;
+        border: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background: #ffffff;
+        box-shadow:  2px 2px 6px #e0e0e0,
+                     -2px -2px 6px #F1F1F1;
+    }
+
+    #textbox:focus{
+
+        box-shadow:  -5px 5px 10px #e09898,
+             5px -5px 10px #ffc2c2;
+
+    }
+
+    #spans{
+
+        z-index: 2;
+        border: 0px;
+        color: white;
+        background-color: #FF3B47;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        box-shadow:  -2px 2px 6px #e0e0e0,
+                     2px -2px 6px #F1F1F1;
+
+    }
+
+    #cartaheader{
+        background-color: #FFE5E7;
+        border-bottom: 0px;
+    }
+
+    #foti{
+        border: 0px;
+    }
+
+    #foti2{
+        background: #FFCDA5;
+        border-bottom: 10px solid #FFB071;
+    }
+
+    #boton1{
+
+        background: linear-gradient(145deg, #3eff7b, #34e668);
+
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+
+        border: 0px;
+    }
+
+    #boton2{
+
+        background: linear-gradient(145deg, #ff3e3e, #e63434);
+
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+
+        border: 0px;
+    }
+
 </style>
 <body>
-    <header>
-        <nav class="barra navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3" style="background:linear-gradient(25deg, #FF1F1F, #FF457B); box-shadow:  6px 6px 14px #cfcfcf;">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Script Akademy</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Inicio</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container" style="margin-left:5px;">
+    
+    <div class="container" style="margin-left: -15px;">
 
-        <div class="row" style="width:116%;">
+        <div class="" style="width:116%; display: flex;">
 
             <div class="" style="width:20.6%;">
 
-                <div class="card text-light bg-dark" style="width: 18rem; margin-bottom: 15px;">
+                <div class="card text-light bg-dark" style="width: 18rem; margin-bottom: 15px; border-radius:0px;">
                   <img src="https://www.ionos.es/digitalguide/fileadmin/DigitalGuide/Teaser/code-t.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Dynamics System</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="card-body" style="text-align:center;">
+                    <h5 class="card-title"><i class="bi bi-columns-gap"></i>  Dynamics System</h5>
                   </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
-                        <a type="button" asp-controller="Usuarios" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-people-fill"></i> Administrar Usuarios</a>
+                  <ul class="list-group list-group-flush" style="border:0px; ">
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2" style="border:0px; margin-top: 5px; margin-bottom: 5px;">
+                        <a id="link" type="button" asp-controller="Usuarios" asp-action="Index" class="btn" style=""><i class="bi bi-people-fill"></i> Administrar Usuarios</a>
                     </li>
-                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
-                        <button type="button" asp-controller="Productos" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-basket3-fill"></i> Administrar Productos</button>
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2" style="border:0px; margin-top: 5px; margin-bottom: 5px;">
+                        <button id="link" type="button" asp-controller="Productos" asp-action="Index" class="btn" style=""><i class="bi bi-basket3-fill"></i> Administrar Productos</button>
                     </li>
-                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
-                        <button type="button" asp-controller="Clientes" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-person-square"></i> Administrar Clientes</button>
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2" style="border:0px; margin-top: 5px; margin-bottom: 5px;">
+                        <button id="link" type="button" asp-controller="Clientes" asp-action="Index" class="btn" style=""><i class="bi bi-person-square"></i> Administrar Clientes</button>
                     </li>
-                    <li class="list-group-item bg-dark text-secondary d-grid gap-2">
-                        <button type="button" asp-controller="Ventas" asp-action="Index" class="btn btn-outline-light"><i class="bi bi-cart-fill"></i> Administrar Ventas</button>
+                    <li class="list-group-item bg-dark text-secondary d-grid gap-2" style="border:0px; margin-top: 5px; margin-bottom: 5px;">
+                        <button id="link" type="button" asp-controller="Ventas" asp-action="Index" class="btn" style=""><i class="bi bi-cart-fill"></i> Administrar Ventas</button>
                     </li>
                   </ul>
-                  <div class="card-body" style="height:8.5vh;">
+                  <div class="card-body" style="height:24vh;">
                   </div>
-                  <li class="list-group-item text-secondary d-grid gap-2" style="background-color: #3D3D3D;">
-                      <br/>
+                  <li class="list-group-item text-secondary d-grid gap-2" style="background-color: #3D3D3D; padding-top: 20px; padding-bottom: 20px;">
+                      <a id="linkLogin" type="button" asp-controller="Usuarios" asp-action="Index" class="btn" style=""><i class="bi bi-box-arrow-in-right"></i> Iniciar Sesion</a>
                   </li>
                 </div>
 
             </div>
 
-            <div class="col" style="width:100%;">
+            <div class="" style="width:100%; margin-right: -19px;">
 
-                <main role="main" class="pb-3">
-                    @RenderBody()
-                </main>
+                <header>
+                    <nav class="barra navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3" style="background: #FF173D; box-shadow:  6px 6px 14px #cfcfcf;">
+                        <div class="container-fluid">
+                            <a id="titles" class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Script Akademy</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                                <ul class="navbar-nav flex-grow-1">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Inicio</a>
+                                    </li>
+                                </ul>
+                                <form class="d-flex" role="search">
+                                    <input id="search" class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+
+                <div class="col" style="margin-left:15px; margin-right:15px;">
+
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+
+                </div>
 
             </div>
 
@@ -82,9 +211,9 @@
 
     </div>
 
-    <footer class="border-top footer text-muted bg-danger opacity-50" style="height: 5pc; margin-bottom: -60px;">
-        <div class="container text-light" style="margin-top:10px;">
-            &copy; 2022 - ScriptAkademy - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class=" footer text-muted bg-secondary opacity-100" style="height: 5pc; margin-bottom: -60px;">
+        <div class="text-light" style="margin-top:-15px; padding-top: 26px; padding-left: 30px;">
+            &copy; 2022 - ScriptAkademy - <a style="color:darkred; text-decoration:none;" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
