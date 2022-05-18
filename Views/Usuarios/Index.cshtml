@@ -5,49 +5,54 @@
 }
 
     
-      <div class="card">
-          <div class="card-header">
+      <div id="carta" class="card">
+
+          <div id="cartaheader" class="card-header">
             Administrar Usuarios
           </div>
           <div class="card-body">
 
-              <a asp-action="Usuario_Detalle" asp-controller="Usuarios" asp-route-idusuario="0" class="btn btn-danger" style="margin-bottom:20px; "><i class="bi bi-person-plus-fill"></i> Agregar Usuarios</a>
+              <a id="btnUsuario" asp-action="Usuario_Detalle" asp-controller="Usuarios" asp-route-idusuario="0" class="btn"><i class="bi bi-person-plus-fill"></i> Agregar Usuarios</a>
               
-              <table class="table table-bordered table-striped">
+              <div id="scroll" class="container">
 
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Contraseña</th>
-                        <th>DUI</th>
-                        <th>Celular</th>
-                        <th>Correo</th>
-                        <th>Estado de Usuario</th>
-                        <th>Tipo de Usuario</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                     <tr>
-                        <td>@item.IdUsuario</td>
-                        <td>@item.Nombre</td>
-                        <td>@item.Contrasena</td>
-                        <td>@item.Dui</td>
-                        <td>@item.Celular</td>
-                        <td>@item.Correo</td>
-                        <td>@item.IdestadoUsuario</td>
-                        <td>@item.IdtipoUsuario</td>
-                        <td><a asp-action="Usuario_Detalle" asp-controller="Usuarios" asp-route-idusuario="@item.IdUsuario" class="btn btn-outline-warning">Actualizar</a></td>
-                        <td><a asp-action="Eliminar" asp-controller="Usuarios" asp-route-idusuario="@item.IdUsuario" class="btn btn-outline-danger">Eliminar</a></td>
-                    </tr>
-                    }
-                </tbody>
+                  <table class="table table-bordered table-striped">
 
-            </table>
+                    <thead id="barratabla">
+                        <tr>
+                            <th>Nº</th>
+                            <th>Nombre</th>
+                            <th>Contraseña</th>
+                            <th>DUI</th>
+                            <th>Celular</th>
+                            <th>Correo</th>
+                            <th>Estado de Usuario</th>
+                            <th>Tipo de Usuario</th>
+                            <th>Editar</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                         <tr>
+                            <td><strong id="ids">@item.IdUsuario</strong></td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Contrasena</td>
+                            <td>@item.Dui</td>
+                            <td>@item.Celular</td>
+                            <td>@item.Correo</td>
+                            <td>@item.IdestadoUsuario</td>
+                            <td>@item.IdtipoUsuario</td>
+                            <td><a id="btnEditar" asp-action="Usuario_Detalle" asp-controller="Usuarios" asp-route-idusuario="@item.IdUsuario" class="btn btn-outline-warning"><i class="bi bi-arrow-up-right-circle-fill"></i></a></td>
+                            <td><a id="btnEliminar" asp-action="Eliminar" asp-controller="Usuarios" asp-route-idusuario="@item.IdUsuario" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i></a></td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
 
           </div>
         </div>
