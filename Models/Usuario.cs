@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.ComponentModel.DataAnnotations;
+
 namespace ScriptAkademy.Models
 {
     public partial class Usuario
@@ -10,7 +10,6 @@ namespace ScriptAkademy.Models
         {
             Productos = new HashSet<Producto>();
         }
-
 
         public int IdUsuario { get; set; }
         [Required]

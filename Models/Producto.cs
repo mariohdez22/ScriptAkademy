@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ScriptAkademy.Models
 {
@@ -19,9 +20,9 @@ namespace ScriptAkademy.Models
         public int IdtipoProducto { get; set; }
         public int IdUsuario { get; set; }
 
-        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
-        public virtual EstadoProducto IdestadoProductoNavigation { get; set; } = null!;
-        public virtual TipoProducto IdtipoProductoNavigation { get; set; } = null!;
+        public virtual Usuario oUsuariosP { get; set; } = null!;
+        public virtual EstadoProducto oEstadoProducto { get; set; } = null!;
+        public virtual TipoProducto oTipoProducto { get; set; } = null!;
         public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
     }
 }
