@@ -1,0 +1,183 @@
+﻿body {
+}
+
+#barra {
+    background: #00BD52 !important;
+    border: 0px;
+    position: fixed;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 3;
+}
+
+#enlace{
+    color: white;
+}
+
+#navs {
+    color: white;
+    background-color: #008138;
+    border: 3px solid white;
+    border-radius: 20px;
+    border-style: dashed;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#poster {
+    background-image: url('https://images.pexels.com/photos/7989226/pexels-photo-7989226.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed;
+    background-position-y: -40px;
+    background-size:100vw;
+    width: 98.9vw;
+    height: 69vh;
+    box-shadow: inset 0px -10px 50px #6a6a6a;
+}
+
+#poster::before{
+    content: '';
+    position: absolute;
+    width: 98.9vw;
+    height: 69vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+#tituloP{
+    padding-top: 24vh;
+    margin-left: 30.5vw;
+    position: absolute;
+    z-index: 2 !important;
+}
+
+#tituloP h1{
+    color: white;
+    font-size: 90px;
+    text-shadow: 0 0 8px #1CE300;
+}
+
+#tituloP p{
+    color:white;
+    font-size: x-large;
+}
+
+#contenido {
+    height: 115vh;
+}
+
+/*--------------------------------------------------*/
+#contencion{
+
+    display: flex;
+    height: 55vh;
+    overflow:hidden;
+}
+
+#apartado{
+
+    width:50vw;
+    height: auto;
+    padding: 40px;
+    text-align: justify;
+}
+
+#apartado h1{
+    font-size: 6pc;
+    margin-bottom: 10px;
+}
+
+#apartado h3{
+    font-size: 2pc;
+    margin-bottom: 15px;
+    color: dimgray;
+}
+
+#contexto {
+    width: 70vw;
+    height: auto;
+    transform: skewX(-25deg);
+    margin-left: 10vw;
+    margin-right: -10vw;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#img {
+    background-image: url('https://images.pexels.com/photos/4050308/pexels-photo-4050308.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed !important;
+    background-size: 55vw;
+    width: 100vw;
+    height: 500px;
+    position: absolute !important;
+    transform: skewX(25deg);
+    margin-left: -70px;
+    border-top: 10px solid white;
+}
+
+/*--------------------------------------------------*/
+
+#contencion2 {
+    display: flex;
+    height: 55vh;
+    overflow: hidden;
+}
+
+#apartado2 {
+    width: 50vw;
+    height: auto;
+    padding: 40px;
+    text-align: right;
+}
+
+#apartado2 h1 {
+    font-size: 6pc;
+    margin-bottom: 10px;
+}
+
+#apartado2 h3 {
+    font-size: 2pc;
+    margin-bottom: 15px;
+    color: dimgray;
+}
+
+#apartado2 p{
+    text-align: justify;
+}
+
+#contexto2 {
+    width: 60vw;
+    height: auto;
+    transform: skewX(25deg);
+    margin-right: 7vw;
+    margin-left: -10vw;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#img2 {
+    background-image: url('https://images.pexels.com/photos/574070/pexels-photo-574070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed !important;
+    background-size: 51.5vw;
+    background-position-y: -40px;
+    width: 100vw;
+    height: 500px;
+    position: absolute !important;
+    transform: skewX(-25deg);
+    margin-left: 128px;
+    border-top: 20px solid white;
+}
+
+/*----------------------------------------*/
+#pie {
+    border-top: 0px;
+    background-color: #D7D7D7;
+    height: 12vh;
+}
+
+
+
+
+

@@ -17,7 +17,7 @@ namespace ScriptAkademy.Controllers
             _productos = productos;
         }
 
-        public IActionResult IndexP()
+        public IActionResult Index()
         {
             List<Producto> productos = _productos.Productos.Include(c => c.oEstadoProducto).Include(c => c.oTipoProducto).Include(c => c.oUsuariosP).ToList();
 
@@ -66,7 +66,7 @@ namespace ScriptAkademy.Controllers
         }
 
         [HttpPost]
-        public IActionResult Usuario_Detalle(ProductoE objetoP)
+        public IActionResult Producto_Detalle(ProductoE objetoP)
         {
 
             if (objetoP.oProducto.IdProductos == 0)

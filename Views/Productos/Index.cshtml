@@ -1,0 +1,58 @@
+﻿@model List<ScriptAkademy.Models.Producto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="carta" class="card">
+
+          <div id="cartaheader" class="card-header">
+            Administrar Productos
+          </div>
+          <div class="card-body">
+
+              <a id="btnUsuario" asp-action="Producto_Detalle" asp-controller="Productos" asp-route-idproducto="0" class="btn"><i class="bi bi-basket3-fill"></i> Agregar Productos</a>
+              
+              <div id="scroll" class="container">
+
+                  <table class="table table-bordered table-striped">
+
+                    <thead id="barratabla">
+                        <tr>
+                            <th>Nº</th>
+                            <th>Productos</th>
+                            <th>Descripcion</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Estado Producto</th>
+                            <th>Tipo Producto</th>
+                            <th>Usuario</th>
+                            <th>Editar</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                         <tr>
+                            <td><strong id="ids">@item.IdProductos</strong></td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Descripcion</td>
+                            <td>@item.Cantidad</td>
+                            <td>@item.Precio</td>
+                            <td>@item.IdestadoProducto</td>
+                            <td>@item.IdtipoProducto</td>
+                            <td>@item.IdUsuario</td>
+                            <td><a id="btnEditar" asp-action="Producto_Detalle" asp-controller="Productos" asp-route-idproducto="@item.IdProductos" class="btn btn-outline-warning"><i class="bi bi-arrow-up-right-circle-fill"></i></a></td>
+                            <td><a id="btnEliminar" asp-action="Eliminar" asp-controller="Productos" asp-route-idproducto="@item.IdProductos" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i></a></td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+        </div>
+

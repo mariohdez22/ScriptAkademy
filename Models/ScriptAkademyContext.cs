@@ -147,19 +147,19 @@ namespace ScriptAkademy.Models
                     .HasColumnType("numeric(10, 2)")
                     .HasColumnName("precio");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                entity.HasOne(d => d.oUsuariosP)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__productos__idUsu__45F365D3");
 
-                entity.HasOne(d => d.IdestadoProductoNavigation)
+                entity.HasOne(d => d.oEstadoProducto)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdestadoProducto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__productos__idest__440B1D61");
 
-                entity.HasOne(d => d.IdtipoProductoNavigation)
+                entity.HasOne(d => d.oTipoProducto)
                     .WithMany(p => p.Productos)
                     .HasForeignKey(d => d.IdtipoProducto)
                     .OnDelete(DeleteBehavior.ClientSetNull)

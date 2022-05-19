@@ -1,0 +1,158 @@
+﻿@model ScriptAkademy.Models.ViewModels.ProductoE
+@{
+    ViewData["Title"] = "Producto_Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div id="carta" class="card">
+              
+        @if (Model.oProducto.IdProductos == 0)
+        {
+            <div id="cartaheader" class="card-header">
+                Crear Producto
+             </div>
+        }
+        else
+        {
+            <div id="cartaheader" class="card-header">
+                 Editar Producto
+             </div>
+        }
+
+              <div class="card-body">
+    
+                  <form asp-action="Producto_Detalle" asp-controller="Productos" method="post">
+
+                      <input type="hidden" class="form-control" asp-for="oProducto.IdProductos" id="Id" aria-describedby="IDs">    
+
+                      <div class="row">
+                        <div class="col">
+                      
+                              @if (Model.oProducto.IdProductos == 0)
+                              {
+                                  <div class="mb-3">
+                                    <label for="" class="form-label">Nombre Producto</label>
+                                    <div class="input-group">
+                                        <span id="spans" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
+                                        <input id="textbox" type="text" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Nombre">
+                                    </div>
+                                    <div id="nombres" class="form-text">Agrege el nombre del producto a guardar</div>
+                                    <span asp-validation-for="oProducto.Nombre" class="text-danger"></span>
+                                  </div>
+                              }
+                              else
+                              {
+                                  <div class="mb-3">
+                                    <label for="" class="form-label">Nombre Producto</label>
+                                    <div class="input-group">
+                                        <span id="spans" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
+                                        <input id="textbox" style="background-color: #D5D5D5;" type="text" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Nombre" readonly>
+                                    </div>
+                                    <div id="nombres" class="form-text">Nombre de producto no modificable luego de añadido</div>
+                                    <span asp-validation-for="oProducto.Nombre" class="text-danger"></span>
+                                  </div>
+                              }
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Descripcion</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-card-text"></i></span>
+                                    <input id="textbox"  type="text" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Descripcion">
+                                </div>
+                                <div id="duis" class="form-text">Agrege una descripcion del producto</div>
+                                <span asp-validation-for="oProducto.Descripcion" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Cantidad</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-cart-plus-fill"></i></span>
+                                    <input id="textbox" type="number" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Cantidad">
+                                </div>
+                                <div id="celulares" class="form-text">Agrega una cantidad para el stock</div>
+                                <span asp-validation-for="oProducto.Cantidad" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Precio</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-cash-stack"></i></span>
+                                    <input id="textbox" type="number" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Precio">
+                                </div>
+                                <div id="celulares" class="form-text">Agrega el precio del producto</div>
+                                <span asp-validation-for="oProducto.Precio" class="text-danger"></span>
+                              </div>
+
+                        </div>
+                        <div class="col">
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Estado del producto</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-clipboard-data-fill"></i></span>
+                                    <select id="textbox" class="form-select" required asp-for="oProducto.IdestadoProducto" asp-items="@Model.listadoEstadoP">
+                                      <option value="selected disable">Seleccionar Estado...</option>
+                                    </select>
+                                </div>
+                                <div id="estados de usuarios" class="form-text">Agrege el estado en el que el producto se encuentra</div>
+                                <span asp-validation-for="oProducto.IdestadoProducto" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Tipo de producto</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-box2-fill"></i></span>
+                                    <select id="textbox" class="form-select" required asp-for="oProducto.IdtipoProducto" asp-items="@Model.listadoTipoP">
+                                      <option value="selected disable">Seleccionar Tipo...</option>
+                                    </select>
+                                </div>
+                                <div id="tipos de usuarios" class="form-text">Ingrese el tipo de producto que pertenece</div>
+                                <span asp-validation-for="oProducto.IdtipoProducto" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Usuario</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-person-video2"></i></span>
+                                    <select id="textbox" class="form-select" required asp-for="oProducto.IdUsuario" asp-items="@Model.listadoUsuario">
+                                      <option value="selected disable">Seleccionar Tipo...</option>
+                                    </select>
+                                </div>
+                                <div id="tipos de usuarios" class="form-text">Ingrese el nivel del usuario en el sistema</div>
+                                <span asp-validation-for="oProducto.IdUsuario" class="text-danger"></span>
+                              </div>
+
+                        </div>
+                        <div class="col">
+
+                            <div id="foti" class="card bg-warning text-dark bg-opacity-25">
+                              <img src="https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/12/18/000735334W.jpg" class="card-img-top" alt="...">
+                              <div id="foti2" class="card-body">
+                                <h5 class="card-title">Administrar Productos</h5>
+                                <p class="card-text">Apartado para administrar los productos del sistema, de parte de la empresa Script Akademy</p>
+                              </div>
+                            </div>
+
+                        </div>
+                      </div>     
+                  
+                      @if (Model.oProducto.IdProductos == 0)
+                      {
+
+                          <button id="boton1" style="margin-top:65px;" type="submit" class="btn btn-success"><i class="bi bi-plus-circle"></i> Agregar</button>
+
+                      }
+                      else
+                      {
+                            
+                          <button id="botonA" style="margin-top:65px;" type="submit" class="btn btn-warning" style="color: white;"><i class="bi bi-plus-circle"></i> Editar</button>
+
+                      }
+
+                      <a id="boton2" style="margin-top:65px;" asp-action="Index" asp-controller="Productos" class="btn btn-danger"><i class="bi bi-box-arrow-left"></i> Volver a la lista</a>
+
+                 </form>
+
+              </div>
+            </div>
+
