@@ -1,0 +1,43 @@
+﻿@model List<ScriptAkademy.Models.Cliente>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="carta" class="card">
+
+          <div id="cartaheader" class="card-header">
+            Administrar Clientes
+          </div>
+          <div class="card-body">
+              <div id="scroll" class="container">
+
+                  <table class="table table-bordered table-striped">
+
+                    <thead id="barratabla">
+                        <tr>
+                            <th>Nº</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                         <tr>
+                            <td><strong id="ids">@item.IdCliente</strong></td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Correo</td>
+                            <td>@item.Contrasena</td>
+                        </tr>
+                        }
+                    </tbody>
+
+                </table>
+
+            </div>
+
+          </div>
+        </div>
+
