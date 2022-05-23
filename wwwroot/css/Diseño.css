@@ -173,9 +173,94 @@
 /*----------------------------------------*/
 #pie {
     border-top: 0px;
-    background-color: #D7D7D7;
+    background-color: #B4B4B4;
     height: 12vh;
 }
+
+#pie p{
+    color: white;
+}
+/*----------------------------------------*/
+
+#cajon{
+
+    padding-top: 165px;
+    padding-bottom: 100px;
+
+}
+
+#login {
+    background-color: white;
+    padding: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#fondo-login {
+    background-image: url('https://images.pexels.com/photos/1048043/pexels-photo-1048043.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed !important;
+    background-size: 100vw;
+    background-position-x: 50%;
+    background-position-y: 100%;
+    overflow: hidden;
+}
+
+#contenido-login h1 {
+    font-size: 80px;
+    color: #000000;
+    text-shadow: 0 0 8px #1CE300;
+}
+
+#contenido-login h2 {  
+    font-size: 20px;
+    color: #00AE18;
+}
+
+#caja-inputs{
+    margin-top: -17px;
+}
+
+#complemento1 {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    background-color: #A2FFEA;
+}
+#complemento2 {
+    border-radius: 0px;
+    background-color: #A2FFEA;
+}
+#complemento3 {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 0px;
+    margin-bottom: 25px;
+    background-color: #A2FFEA;
+}
+
+#input-login1 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+}
+#input-login2 {
+    border-radius: 0px;
+}
+#input-login3 {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 25px;
+}
+
+#boton-login {
+    border-radius: 20px;
+    background: #0fc3ff;
+    border: 0px;
+    color: white;
+}
+
+#boton-login:hover{
+    color: black;
+    background: #00FFF3;
+}
+
 
 
 

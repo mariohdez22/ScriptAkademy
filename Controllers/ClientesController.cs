@@ -30,6 +30,7 @@ namespace ScriptAkademy.Controllers
             }
             return View(oClienteE);
         }
+
         [HttpPost]
         public IActionResult Cliente_Detalle(ClienteE objetoC)
         {

@@ -3,21 +3,48 @@
     ViewData["Title"] = "Cliente_Detalle";
     Layout = "~/Views/Sitio/Diseño.cshtml";
 }
-<form asp-action="Cliente_Detalle" asp-controller="Clientes" method="post">
-  <div class="mb-3" style="padding-top:50px;">
-    <label  class="form-label">Nombre</label>
-    <input type="text" class="form-control" required asp-for="oCliente.Nombre" >
-    <div  class="form-text">Aqui se ingresa el nombre</div>
-  </div>
-  <div class="mb-3">
-    <label  class="form-label">Correo</label>
-    <input type="email" class="form-control" required asp-for="oCliente.Correo" >
-    <div  class="form-text">Aqui se ingresa el correo</div>
-  </div>
-  <div class="mb-3">
-    <label  class="form-label">Contraseña</label>
-    <input type="password" class="form-control" required asp-for="oCliente.Contrasena">
-  </div>
-  <button type="submit" class="btn btn-primary">Agregar</button>
-</form>
+
+<div id="fondo-login">
+
+    <div class="row" id="cajon">
+
+        <div class="col"></div>
+
+        <div class="col" id="login">
+
+            <div class="text-center" id="contenido-login">
+                <h1><i class="bi bi-person-circle"></i></h1>
+                <h2>Script Akademy</h2>
+                <p>Registrate con una cuenta.</p>
+            </div>
+            <br />
+            <form asp-action="Cliente_Detalle" asp-controller="Clientes" method="post">
+              <div class="mb-3">
+                  <div class="input-group">
+                    <span id="complemento1" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
+                    <input id="input-login1" type="text" class="form-control" placeholder="Nombre..." required asp-for="oCliente.Nombre" >
+                  </div>
+              </div>
+              <div class="mb-3" id="caja-inputs">
+                  <div class="input-group">
+                    <span id="complemento2" class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                    <input id="input-login2" type="email" class="form-control" placeholder="Correo..." required asp-for="oCliente.Correo" >
+                  </div>
+              </div>
+              <div class="mb-3" id="caja-inputs">
+                  <div class="input-group">
+                    <span id="complemento3" class="input-group-text"><i class="bi bi-hash"></i></span>
+                    <input id="input-login3" type="password" class="form-control" placeholder="Contraseña..." required asp-for="oCliente.Contrasena">
+                  </div>
+              </div>
+              <button id="boton-login" type="submit" class="btn"><i class="bi bi-arrow-down-circle-fill"></i> Registrarse</button>
+            </form>
+
+        </div>
+
+        <div class="col"></div>
+
+    </div>
+
+</div>
 
