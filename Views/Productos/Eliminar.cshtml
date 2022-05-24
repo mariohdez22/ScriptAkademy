@@ -1,0 +1,117 @@
+﻿@model ScriptAkademy.Models.Producto
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+        <div id="carta" class="card">
+
+            <div id="cartaheader" class="card-header">
+                Eliminar Usuario
+             </div>
+              <div id="" class="card-body">
+    
+                  <form asp-action="Eliminar" asp-controller="Productos" method="post">
+
+                      <input type="hidden" class="form-control" asp-for="IdProductos">    
+
+                      <div class="row">
+                        <div class="col">
+                      
+                              <div class="mb-3">
+                                <label for="" class="form-label">Nombre</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5;" type="text" placeholder="ingresar..." class="form-control" asp-for="Nombre"  disabled>
+                                </div>
+                                <div id="nombres" class="form-text">Agrege el nombre del usuario a guardar</div>
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Descripcion</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5;" type="text" placeholder="ingresar..." class="form-control" asp-for="Descripcion" disabled>
+                                </div>
+                                <div id="nombres" class="form-text">Agrege una descripcion del producto</div>
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Cantidad</label>
+                                <div class="input-group">
+                                    <span  id="spans" class="input-group-text"><i class="bi bi-file-person"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5; type="text" placeholder="ingresar..." class="form-control" asp-for="Cantidad" disabled>
+                                </div>
+                                <div id="duis" class="form-text">Agrega una cantidad para el stock</div>
+                                <span asp-validation-for="Cantidad" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Precio</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-phone-fill"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5; type="text" placeholder="ingresar..." class="form-control" asp-for="Precio" disabled>
+                                </div>
+                                <div id="celulares" class="form-text">Agrega el precio del producto</div>
+                                <span asp-validation-for="Precio" class="text-danger"></span>
+                              </div>
+
+                        </div>
+                        <div class="col">
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Estado de producto</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-person-video"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5; type="text" placeholder="ingresar..." class="form-control" asp-for="oEstadoProducto.EstadoProducto1"  disabled>
+                                </div>
+                                <div id="estados de usuarios" class="form-text">Agrege el estado en el que el producto se encuentra</div>
+                                <span asp-validation-for="IdestadoProducto" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Tipo de producto</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-person-video2"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5; type="text" placeholder="ingresar..." class="form-control" asp-for="oTipoProducto.TipoProducto1" disabled>
+                                </div>
+                                <div id="tipos de usuarios" class="form-text">Ingrese el tipo de producto que pertenece</div>
+                                <span asp-validation-for="IdtipoProducto" class="text-danger"></span>
+                              </div>
+
+                              <div class="mb-3">
+                                <label for="" class="form-label">Usuario</label>
+                                <div class="input-group">
+                                    <span id="spans" class="input-group-text"><i class="bi bi-person-video2"></i></span>
+                                    <input id="textbox" style="background-color: #D5D5D5; type="text" placeholder="ingresar..." class="form-control" asp-for="oUsuariosP.Nombre" disabled>
+                                </div>
+                                <div id="tipos de usuarios" class="form-text">Ingrese el nivel del usuario en el sistema</div>
+                                <span asp-validation-for="IdUsuario" class="text-danger"></span>
+                              </div>
+
+                        </div>
+                        <div class="col">
+
+                            <div id="foti" class="card bg-warning text-dark bg-opacity-25">
+                              <img src="https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/12/18/000735334W.jpg" class="card-img-top" alt="...">
+                              <div id="foti2" class="card-body">
+                                <h5 class="card-title">Administrar Productos</h5>
+                                <p class="card-text">Apartado para administrar los productos del sistema, de parte de la empresa Script Akademy</p>
+                              </div>
+                            </div>
+
+                        </div>
+                      </div>     
+
+
+                      <button id="botonB" style="margin-top:65px;" type="submit" class="btn btn-danger"> <i class="bi bi-x-circle"></i> Eliminar</button>
+
+                      <button id="boton2" style="margin-top:65px;" asp-action="Index" asp-controller="Productos" class="btn btn-danger"><i class="bi bi-box-arrow-left"></i> Volver a la lista</button>
+
+                 </form>
+
+              </div>
+            </div>
+

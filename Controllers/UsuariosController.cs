@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ScriptAkademy.Models;
 using ScriptAkademy.Models.ViewModels;
 using System.Diagnostics;
+#pragma warning disable 
 
 namespace ScriptAkademy.Controllers
 {
@@ -19,7 +20,9 @@ namespace ScriptAkademy.Controllers
 
         public IActionResult Index()
         {
-            List<Usuario> usuarios = _usuarios.Usuarios.Include(c => c.oEstadoUsuario).Include(c => c.oTipoUsuario).ToList();
+            List<Usuario> usuarios = _usuarios.Usuarios.Include(c => c.oEstadoUsuario)
+                                                       .Include(c => c.oTipoUsuario)
+                                                       .ToList();
                           
             return View(usuarios);
         }
@@ -78,7 +81,11 @@ namespace ScriptAkademy.Controllers
         public IActionResult Eliminar(int Idusuario)
         {
 
-            Usuario obUsuario = _usuarios.Usuarios.Include(c => c.oEstadoUsuario).Where(o => o.IdUsuario == Idusuario).Include(c => c.oTipoUsuario).Where(o => o.IdUsuario == Idusuario).FirstOrDefault();
+            Usuario obUsuario = _usuarios.Usuarios.Include(c => c.oEstadoUsuario)
+                                                  .Where(o => o.IdUsuario == Idusuario)
+                                                  .Include(c => c.oTipoUsuario)
+                                                  .Where(o => o.IdUsuario == Idusuario)
+                                                  .FirstOrDefault();
 
             return View(obUsuario);
         }
@@ -87,7 +94,9 @@ namespace ScriptAkademy.Controllers
         public IActionResult Eliminar(Usuario objetoU)
         {
 
-            _usuarios.Usuarios.Remove(objetoU);
+            if (objetoU.IdUsuario == 0)
+                _usuarios.Usuarios.Remove(objetoU);
+
             _usuarios.SaveChanges();
 
             return View(objetoU);

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ScriptAkademy.Models;
 using ScriptAkademy.Models.ViewModels;
 using System.Diagnostics;
+#pragma warning disable 
 
 namespace ScriptAkademy.Controllers
 {
