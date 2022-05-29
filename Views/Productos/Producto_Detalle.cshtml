@@ -34,7 +34,7 @@
                                     <label for="" class="form-label">Nombre Producto</label>
                                     <div class="input-group">
                                         <span id="spans" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
-                                        <input id="textbox" type="text" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Nombre">
+                                        <input id="textbox" type="text" placeholder="ingresar..." class="form-control" onkeypress="return SoloLetras(event)" required asp-for="oProducto.Nombre">
                                     </div>
                                     <div id="nombres" class="form-text">Agrege el nombre del producto a guardar</div>
                                     <span asp-validation-for="oProducto.Nombre" class="text-danger"></span>
@@ -57,7 +57,7 @@
                                 <label for="" class="form-label">Descripcion</label>
                                 <div class="input-group">
                                     <span id="spans" class="input-group-text"><i class="bi bi-card-text"></i></span>
-                                    <input id="textbox"  type="text" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Descripcion">
+                                    <input id="textbox"  type="text" placeholder="ingresar..." class="form-control" onkeypress="return SoloLetrasAndNumeros(event)" required asp-for="oProducto.Descripcion">
                                 </div>
                                 <div id="duis" class="form-text">Agrege una descripcion del producto</div>
                                 <span asp-validation-for="oProducto.Descripcion" class="text-danger"></span>
@@ -67,7 +67,7 @@
                                 <label for="" class="form-label">Cantidad</label>
                                 <div class="input-group">
                                     <span id="spans" class="input-group-text"><i class="bi bi-cart-plus-fill"></i></span>
-                                    <input id="textbox" type="number" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Cantidad">
+                                    <input id="textbox" type="number" placeholder="ingresar..." class="form-control" onkeypress="return SoloNumeros(event)" required asp-for="oProducto.Cantidad">
                                 </div>
                                 <div id="celulares" class="form-text">Agrega una cantidad para el stock</div>
                                 <span asp-validation-for="oProducto.Cantidad" class="text-danger"></span>
@@ -77,7 +77,7 @@
                                 <label for="" class="form-label">Precio</label>
                                 <div class="input-group">
                                     <span id="spans" class="input-group-text"><i class="bi bi-cash-stack"></i></span>
-                                    <input id="textbox" type="number" placeholder="ingresar..." class="form-control" required asp-for="oProducto.Precio">
+                                    <input id="textbox" type="number" placeholder="ingresar..." class="form-control" onkeypress="return SoloNumeros(event)" required asp-for="oProducto.Precio">
                                 </div>
                                 <div id="celulares" class="form-text">Agrega el precio del producto</div>
                                 <span asp-validation-for="oProducto.Precio" class="text-danger"></span>

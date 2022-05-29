@@ -35,7 +35,7 @@
                                     <label for="" class="form-label">Nombre</label>
                                     <div class="input-group">
                                         <span id="spans" class="input-group-text"><i class="bi bi-plus-circle-fill"></i></span>
-                                        <input id="textbox" type="text" placeholder="ingresar..." class="form-control" required asp-for="oUsuario.Nombre" aria-describedby="nombres">
+                                        <input id="textbox" type="text" placeholder="ingresar..." class="form-control" onkeypress="return SoloLetras(event)" required asp-for="oUsuario.Nombre" aria-describedby="nombres">
                                     </div>
                                     <div id="nombres" class="form-text">Agrege el nombre del usuario a guardar</div>
                                     <span asp-validation-for="oUsuario.Nombre" class="text-danger"></span>
@@ -75,7 +75,7 @@
                                 <label for="" class="form-label">DUI</label>
                                 <div class="input-group">
                                     <span id="spans" class="input-group-text"><i class="bi bi-file-person"></i></span>
-                                    <input id="textbox"  type="text" placeholder="ingresar..." class="form-control" required asp-for="oUsuario.Dui" id="dui" aria-describedby="duis">
+                                    <input id="textbox"  type="text" placeholder="ingresar..." class="form-control" onkeypress="return SoloNumeros(event)" required asp-for="oUsuario.Dui" id="dui" aria-describedby="duis">
                                 </div>
                                 <div id="duis" class="form-text">Agrege el dui para el reconocimiento legal</div>
                                 <span asp-validation-for="oUsuario.Dui" class="text-danger"></span>
@@ -85,7 +85,7 @@
                                 <label for="" class="form-label">Celular</label>
                                 <div class="input-group">
                                     <span id="spans" class="input-group-text"><i class="bi bi-phone-fill"></i></span>
-                                    <input id="textbox" type="text" placeholder="ingresar..." class="form-control" required asp-for="oUsuario.Celular" id="celular" aria-describedby="celulares">
+                                    <input id="textbox" type="text" placeholder="ingresar..." class="form-control" onkeypress="return SoloNumeros(event)" required asp-for="oUsuario.Celular" id="celular" aria-describedby="celulares">
                                 </div>
                                 <div id="celulares" class="form-text">Agrege un celular para futuros contactos / llamadas</div>
                                 <span asp-validation-for="oUsuario.Celular" class="text-danger"></span>
