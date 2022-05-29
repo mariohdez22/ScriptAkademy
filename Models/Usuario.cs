@@ -22,11 +22,11 @@ namespace ScriptAkademy.Models
         public string Contrasena { get; set; } = null!;
 
         [Required(ErrorMessage = "El dui es obligatorio")]
-        [StringLength(9, ErrorMessage = "El {0} debe de ser de {2} y maximo {1} caracteres", MinimumLength = 10)]
+        [StringLength(9, ErrorMessage = "El {0} debe de ser de {2} y maximo {1} caracteres", MinimumLength = 9)]
         public string Dui { get; set; } = null!;
 
         [Required(ErrorMessage = "El celular es obligatorio")]
-        [StringLength(8, ErrorMessage = "El {0} debe de ser de {2} y maximo {1} caracteres", MinimumLength = 9)]
+        [StringLength(8, ErrorMessage = "El {0} debe de ser de {2} y maximo {1} caracteres", MinimumLength = 8)]
         public string Celular { get; set; } = null!;
 
         [Required(ErrorMessage = "El Correo es obligatorio")]
