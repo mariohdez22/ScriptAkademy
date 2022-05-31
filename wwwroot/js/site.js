@@ -1,4 +1,4 @@
-﻿function check(e) {
+﻿let check = (e) =>{
     tecla = (document.all) ? e.keyCode : e.which;
 
     if (tecla == 8) {
