@@ -1,0 +1,179 @@
+create database ScriptAkademy
+
+use ScriptAkademy
+
+create table estado_usuario
+(
+	idestadoUsuario int identity(1,1) not null primary key,
+	estadoUsuario varchar(50) not null,
+)
+
+
+create table tipo_usuario
+(
+	idtipoUsuario int identity(1,1) not null primary key,
+	tipoUsuario varchar(50) not null,
+)
+
+create table usuario
+(
+	idUsuario int identity(1,1) not null primary key,
+	nombre varchar(50) not null,
+	contrasena varchar(50) not null,
+	dui varchar(50) not null,
+	celular varchar(50) not null,
+	correo varchar(50),
+	idestadoUsuario int not null references estado_usuario(idestadoUsuario),
+	idtipoUsuario int not null references tipo_usuario(idtipoUsuario),
+)
+
+create table cliente
+(
+	idCliente int identity(1,1) not null primary key,
+	nombre varchar(50) not null,
+	correo varchar(50) not null,
+	contrasena varchar(50),
+)
+
+create table estado_producto
+(
+	idestadoProducto int identity(1,1) not null primary key,
+	estadoProducto varchar(50) not null,
+)
+
+
+create table tipo_producto
+(
+	idtipoProducto int identity(1,1) not null primary key,
+	tipoProducto varchar(50) not null,
+)
+
+create table productos
+(
+	idProductos int identity(1,1) not null primary key,
+	nombre varchar(50) not null,
+	descripcion varchar(50) not null,
+	cantidad int not null,
+	precio numeric(10,2) not null,
+	idestadoProducto int not null references estado_producto(idestadoProducto),
+	idtipoProducto int not null references tipo_producto(idtipoProducto),
+	idUsuario int not null references usuario(idUsuario),
+)
+
+create table ventas
+(
+	idVenta int identity(1,1) not null primary key,
+	total numeric(10,2) not null,
+	fecha datetime not null,
+	idcliente int not null references cliente(idcliente)
+)
+
+create table detalle_ventas
+(
+	iddetalleVenta int identity(1,1) not null primary key,
+	idVenta int not null references ventas(idVenta),
+	idProductos int not null references productos(idProductos),
+	cantidad int not null,
+)
+
+insert into estado_usuario
+values('Activo')
+
+insert into tipo_usuario
+values('Administrador')
+
+insert into estado_producto
+values ('Disponible'),
+	  ('No Disponible')
+
+insert into tipo_producto
+values ('Web'),
+	   ('Escritorio'),
+	   ('Seguridad')
+
+insert into usuario 
+values('mario', 'ddddddddd', '0-34233456', '3947-8765', 'mario@gmail.com', 1, 1)
+
+select * from usuario
+
+select idUsuario, nombre, contrasena, dui, celular, correo, estadoUsuario, tipoUsuario from usuario inner join estado_usuario ON usuario.idestadoUsuario = estado_usuario.idestadoUsuario inner join tipo_usuario ON usuario.idtipoUsuario = tipo_usuario.idtipoUsuario
+
+select * from estado_usuario
+
+update tipo_usuario set tipoUsuario = 'Administrador' where idtipoUsuario = 1
+
+------------------------------------------------------------
+
+drop procedure sp_listar
+
+create procedure sp_listar
+as
+begin
+	select * from usuario 
+end
+
+------------------------------------------------------------
+
+create procedure sp_listaEstado
+as
+begin
+	select estadoUsuario from estado_usuario
+end
+
+------------------------------------------------------------
+
+create procedure sp_obtener(
+@idContacto int
+)
+as
+begin
+	select * from usuario where idUsuario = @idContacto
+end
+
+------------------------------------------------------------
+
+create procedure sp_Guardar(
+@Nombre varchar(100),
+@Contrase�a varchar(100),
+@Dui varchar(100),
+@Celular varchar(100),
+@Correo varchar(100),
+@Estadousuario int,
+@Tipousuario int
+)
+as
+begin
+	insert into usuario(nombre, contrasena, dui, celular, correo, idestadoUsuario, idtipoUsuario) values (@Nombre, @Contrase�a, @Dui, @Celular, @Correo, @Estadousuario, @Tipousuario)
+end
+
+------------------------------------------------------------
+
+create procedure sp_Editar(
+@Idusuario int,
+@Nombre varchar(100),
+@Contrase�a varchar(100),
+@Dui varchar(100),
+@Celular varchar(100),
+@Correo varchar(100),
+@Estadousuario int,
+@Tipousuario int
+)
+as
+begin
+	update usuario set nombre = @Nombre, contrasena = @Contrase�a, dui = @Dui, celular = @Celular, correo = @Correo, idestadoUsuario = @Estadousuario, idtipoUsuario = @Tipousuario where idUsuario = @Idusuario
+end
+
+--------------------------------------------------------------
+
+create procedure sp_Eliminar(
+@Idusuario int
+)
+as
+begin
+	delete from usuario where idUsuario = @Idusuario
+end
+
+--------------------------------------------------------------
+
+
+
